@@ -37,6 +37,14 @@ func main() {
 func singleNumber(nums []int) int {
 	single := 0
 	for k, num := range nums {
+		//011
+		//011
+		//000
+
+
+		//000
+		//011
+		//011
 		single ^= num
 		fmt.Println(k)
 	}
