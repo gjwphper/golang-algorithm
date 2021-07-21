@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+
 //
 //选择排序就好比第一个数字站在擂台上，大吼一声：“还有谁比我小？”。剩余数字来挨个打擂，如果出现比第一个数字小的数，则新的擂主产生。每轮打擂结束都会找出一个最小的数，将其交换至首位。经过 n-1 轮打擂，所有的数字就按照从小到大排序完成了。
 
@@ -26,17 +27,25 @@ import "fmt"
 //来源：力扣（LeetCode）
 //著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 func main() {
-	list := []int {6,3,5,2,4,1}
+	list := []int{6, 3, 5, 2, 4, 1}
 	selectSort(list)
 	fmt.Println(list)
 }
 
-func selectSort(list []int){
+/**
+1、2层循环，里面的作比较
+2、list构建
+3、交换
+4、j:=i+1
+5、记录最小的下标，当前第i个，为选出来的最小的
+*/
 
-	for i:=0;i<len(list)-1;i++  {
+func selectSort(list []int) {
+
+	for i := 0; i < len(list)-1; i++ {
 		minIndex := i
-		for j:=i+1;j<len(list);j++{
-			if(list[minIndex]> list[j]){
+		for j := i + 1; j < len(list); j++ {
+			if list[minIndex] > list[j] {
 				minIndex = j
 			}
 		}

@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 
-	list := []int {6,3,5,2,4,1}
+	list := []int{6, 3, 5, 2, 4, 1}
 
 	// i = 0 第一遍排序
 	// 6,3,5,2,4,1
@@ -25,17 +25,14 @@ func main() {
 	//a = b - a
 	//b = b - a
 
-
 	a = a ^ b
 
 	//011   3   = 1*2的0次方 + 1*2的一次方
 	//100	4 = 1*2的2次方
 	//111
 
-
 	b = b ^ a
 	a = a ^ b
-
 
 	c := 3
 	d := 4
@@ -46,32 +43,32 @@ func main() {
 
 	c = ^1
 
-
-
-	fmt.Println(a,b,c)
-
+	fmt.Println(a, b, c)
 
 	fmt.Println(d)
 
-
-
-
 }
 
-func bubbleSort(list []int){
+/**
+1、2层循环，里面的作比较
+2、list构建
+3、交换
+*/
+func bubbleSort(list []int) {
 
-	for i:=0;i<len(list);i++  {
-		for j:=1;j<len(list);j++{
+	for i := 0; i < len(list); i++ {
+		for j := 1; j < len(list); j++ {
 			if list[j-1] > list[j] {
 				//temp := list[j-1]
 				//list[j-1] = list[j]
 				//list[j] = temp
-				swap(list,j-1,j)
+				swap(list, j-1, j)
 			}
 		}
 	}
 	//return list
 }
+
 //
 //func swap(list []int,m int,n int){
 //	temp := list[m]
@@ -79,12 +76,8 @@ func bubbleSort(list []int){
 //	list[n] = temp
 //}
 
-
-
-func swap(arr []int,i int,j int){
+func swap(arr []int, i int, j int) {
 	arr[i] = arr[i] ^ arr[j]
 	arr[j] = arr[j] ^ arr[i]
 	arr[i] = arr[i] ^ arr[j]
 }
-
-
