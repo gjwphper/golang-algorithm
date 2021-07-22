@@ -43,7 +43,7 @@ func main() {
 func selectSort(list []int) {
 
 	for i := 0; i < len(list)-1; i++ {
-		minIndex := i
+		minIndex := i //先初始化假设为最小的
 		for j := i + 1; j < len(list); j++ {
 			if list[minIndex] > list[j] {
 				minIndex = j
@@ -53,6 +53,7 @@ func selectSort(list []int) {
 		temp := list[i]
 		list[i] = list[minIndex]
 		list[minIndex] = temp
+		fmt.Println(list)
 
 	}
 

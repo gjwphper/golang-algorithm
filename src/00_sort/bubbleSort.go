@@ -53,6 +53,7 @@ func main() {
 1、2层循环，里面的作比较
 2、list构建
 3、交换
+4、i := 0,j-1参与比对
 */
 func bubbleSort(list []int) {
 
@@ -63,6 +64,7 @@ func bubbleSort(list []int) {
 				//list[j-1] = list[j]
 				//list[j] = temp
 				swap(list, j-1, j)
+				fmt.Println(list)
 			}
 		}
 	}
@@ -76,6 +78,7 @@ func bubbleSort(list []int) {
 //	list[n] = temp
 //}
 
+// 异或操作符
 func swap(arr []int, i int, j int) {
 	arr[i] = arr[i] ^ arr[j]
 	arr[j] = arr[j] ^ arr[i]
